@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.fernando.random_data_api.generators.RandomGenerator;
 import com.fernando.random_data_api.requests.RandomTextRequestBody;
+import com.fernando.random_data_api.responses.RandomCPFResponse;
 import com.fernando.random_data_api.responses.RandomPasswordResponse;
 import com.fernando.random_data_api.responses.RandomTextResponse;
 
@@ -26,6 +27,11 @@ public class RandomGeneratorController {
     public RandomGenerator<List<String>, String> textRandomGenerator;  
 
 
+    @Autowired
+    @Qualifier("cpfRandomGenerator")
+    public RandomGenerator<Boolean, String> cpfRandomGenerator;
+
+
     @GetMapping("/password")
     public RandomPasswordResponse getRandomPassword(@RequestParam("passwordSize") Integer passwordSize) {
         var randomPassword = passwordRandomGenerator.generateRandom(passwordSize);
@@ -37,5 +43,12 @@ public class RandomGeneratorController {
         List<String> texts = randomTextRequestBody.texts();
         String randomText = textRandomGenerator.generateRandom(randomTextRequestBody.texts());
         return new RandomTextResponse(randomText, texts, texts.size(), randomText.length());
+    }
+
+    @GetMapping("/cpf")
+    public RandomCPFResponse getRandomCPF(
+        @RequestParam(name = "hasEspecialCharacters", required = false, defaultValue = "false") Boolean hasEspecialCharacters) {
+        String randomCPF = cpfRandomGenerator.generateRandom(hasEspecialCharacters);
+        return new RandomCPFResponse(randomCPF, hasEspecialCharacters);
     }
 }
