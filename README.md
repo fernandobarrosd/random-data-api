@@ -14,8 +14,7 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 ## Tipos de informações que irão ser geradas de maneira aleatória
 
 - Password (senha)
-- CPF
-- Number 
+- CPF 
 - Range of numbers (números em um intervalo) Ex:. 10 to 100
 - Texts (textos)
 
