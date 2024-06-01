@@ -15,7 +15,6 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 
 - Password (senha)
 - CPF
-- Date (data)
 - Number 
 - Range of numbers (números em um intervalo) Ex:. 10 to 100
 - Texts (textos)
