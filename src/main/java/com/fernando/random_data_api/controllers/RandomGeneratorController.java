@@ -1,15 +1,16 @@
 package com.fernando.random_data_api.controllers;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.fernando.random_data_api.generators.RandomGenerator;
+import com.fernando.random_data_api.generators.CPFRandomGenerator;
+import com.fernando.random_data_api.generators.NumberInRangeRandomGenerator;
+import com.fernando.random_data_api.generators.PasswordRandomGenerator;
+import com.fernando.random_data_api.generators.TextRandomGenerator;
 import com.fernando.random_data_api.generators.NumberInRangeRandomGenerator.NumberRange;
 import com.fernando.random_data_api.requests.RandomTextRequestBody;
 import com.fernando.random_data_api.responses.RandomCPFResponse;
@@ -21,21 +22,17 @@ import com.fernando.random_data_api.responses.RandomTextResponse;
 @RequestMapping("/random")
 public class RandomGeneratorController {
     @Autowired
-    @Qualifier("passwordRandomGenerator")
-    private RandomGenerator<Integer, String> passwordRandomGenerator;
+    private PasswordRandomGenerator passwordRandomGenerator;
 
     @Autowired
-    @Qualifier("textRandomGenerator")
-    private RandomGenerator<List<String>, String> textRandomGenerator;
+    private TextRandomGenerator textRandomGenerator;
 
 
     @Autowired
-    @Qualifier("cpfRandomGenerator")
-    private RandomGenerator<Boolean, String> cpfRandomGenerator;
+    private CPFRandomGenerator cpfRandomGenerator;
 
     @Autowired
-    @Qualifier("numberInRangeRandomGenerator")
-    private RandomGenerator<NumberRange, Integer> numberRangeRandomGenerator;
+    private NumberInRangeRandomGenerator numberRangeRandomGenerator;
 
 
     @GetMapping("/password")
