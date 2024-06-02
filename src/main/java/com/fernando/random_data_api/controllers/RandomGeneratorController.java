@@ -22,16 +22,16 @@ import com.fernando.random_data_api.responses.RandomTextResponse;
 public class RandomGeneratorController {
     @Autowired
     @Qualifier("passwordRandomGenerator")
-    public RandomGenerator<Integer, String> passwordRandomGenerator;
+    private RandomGenerator<Integer, String> passwordRandomGenerator;
 
     @Autowired
     @Qualifier("textRandomGenerator")
-    public RandomGenerator<List<String>, String> textRandomGenerator;
+    private RandomGenerator<List<String>, String> textRandomGenerator;
 
 
     @Autowired
     @Qualifier("cpfRandomGenerator")
-    public RandomGenerator<Boolean, String> cpfRandomGenerator;
+    private RandomGenerator<Boolean, String> cpfRandomGenerator;
 
     @Autowired
     @Qualifier("numberInRangeRandomGenerator")
