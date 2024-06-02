@@ -15,4 +15,8 @@ public final class RandomUtils {
         Integer randomIndex = random.nextInt(data.length - 0) + 0;
         return data[randomIndex];
     }
+
+    public static Integer randomNumber(Random random, Integer fromNumber, Integer toNumber) {
+        return random.nextInt(fromNumber, toNumber + 1);
+    }
 }
