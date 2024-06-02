@@ -20,7 +20,7 @@ import com.fernando.random_data_api.responses.RandomTextResponse;
 
 @RestController
 @RequestMapping("/random")
-public class RandomGeneratorController {
+public class RandomController {
     @Autowired
     private PasswordRandomGenerator passwordRandomGenerator;
 
