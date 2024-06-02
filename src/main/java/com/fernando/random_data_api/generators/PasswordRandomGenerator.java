@@ -1,13 +1,14 @@
 package com.fernando.random_data_api.generators;
 
 import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.fernando.random_data_api.utils.RandomUtils;
+
 
 @Service("passwordRandomGenerator")
 public class PasswordRandomGenerator implements RandomGenerator<Integer, String> {
-    private static final char[] characters = {
+    private static final Character[] characters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
         'K','L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
         'U','V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 
@@ -25,8 +26,7 @@ public class PasswordRandomGenerator implements RandomGenerator<Integer, String>
     public String generateRandom(Integer passwordSize) {
         String randomPassword = "";
         for (int i = 0; i < passwordSize; i ++) {
-            Integer randomIndex = random.nextInt(characters.length - 0) + 0;
-            char character = characters[randomIndex];
+            Character character = RandomUtils.randomValue(random, characters);
             randomPassword += character;   
         }
         return randomPassword;

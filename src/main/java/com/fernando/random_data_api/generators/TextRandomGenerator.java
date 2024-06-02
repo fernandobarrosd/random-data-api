@@ -5,6 +5,8 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fernando.random_data_api.utils.RandomUtils;
+
 @Service("textRandomGenerator")
 public class TextRandomGenerator implements RandomGenerator<List<String>, String> {
     @Autowired
@@ -17,7 +19,6 @@ public class TextRandomGenerator implements RandomGenerator<List<String>, String
     }
 
     private String randomText(List<String> texts) {
-        Integer randomIndex = random.nextInt(texts.size() - 0) + 0;
-        return texts.get(randomIndex);
+        return RandomUtils.randomValue(random, texts);
     }
 }
