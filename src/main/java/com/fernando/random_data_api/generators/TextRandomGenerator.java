@@ -2,12 +2,13 @@ package com.fernando.random_data_api.generators;
 
 import java.util.List;
 import java.util.Random;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("textRandomGenerator")
 public class TextRandomGenerator implements RandomGenerator<List<String>, String> {
-    private static final Random RANDOM = new Random();
+    @Autowired
+    private Random random;
 
     @Override
     public String generateRandom(List<String> texts) {
@@ -16,8 +17,7 @@ public class TextRandomGenerator implements RandomGenerator<List<String>, String
     }
 
     private String randomText(List<String> texts) {
-        Integer randomIndex = RANDOM.nextInt(texts.size() - 0) + 0;
+        Integer randomIndex = random.nextInt(texts.size() - 0) + 0;
         return texts.get(randomIndex);
     }
-    
 }

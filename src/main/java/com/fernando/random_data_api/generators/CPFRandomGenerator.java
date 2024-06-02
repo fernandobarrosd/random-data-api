@@ -1,11 +1,14 @@
 package com.fernando.random_data_api.generators;
 
 import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("cpfRandomGenerator")
 public class CPFRandomGenerator implements RandomGenerator<Boolean, String> {
-    private static final Random RANDOM = new Random();
+    @Autowired
+    private Random random;
     private static final char[] NUMBERS = {
         '0', '1', '2', '3', '4','5', '6', '7', '8', '9'
     };
@@ -47,7 +50,7 @@ public class CPFRandomGenerator implements RandomGenerator<Boolean, String> {
     }
 
     private char randomNumber() {
-        Integer randomIndex = RANDOM.nextInt(NUMBERS.length - 0) + 0;
+        Integer randomIndex = random.nextInt(NUMBERS.length - 0) + 0;
         return NUMBERS[randomIndex];
     }
 }

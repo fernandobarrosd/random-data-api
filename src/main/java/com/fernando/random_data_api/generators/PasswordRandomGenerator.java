@@ -1,6 +1,8 @@
 package com.fernando.random_data_api.generators;
 
 import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("passwordRandomGenerator")
@@ -16,7 +18,8 @@ public class PasswordRandomGenerator implements RandomGenerator<Integer, String>
         '!'
     };
 
-    private static Random random = new Random();
+    @Autowired
+    private Random random;
 
     @Override
     public String generateRandom(Integer passwordSize) {
