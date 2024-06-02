@@ -49,6 +49,6 @@ public class RandomGeneratorController {
     public RandomCPFResponse getRandomCPF(
         @RequestParam(name = "hasEspecialCharacters", required = false, defaultValue = "false") Boolean hasEspecialCharacters) {
         String randomCPF = cpfRandomGenerator.generateRandom(hasEspecialCharacters);
-        return new RandomCPFResponse(randomCPF, hasEspecialCharacters);
+        return new RandomCPFResponse(randomCPF, hasEspecialCharacters, randomCPF.length());
     }
 }
