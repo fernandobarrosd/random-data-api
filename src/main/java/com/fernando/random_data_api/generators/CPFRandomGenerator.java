@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.fernando.random_data_api.utils.RandomUtils;
 
-@Service("cpfRandomGenerator")
+@Service
 public class CPFRandomGenerator implements RandomGenerator<Boolean, String> {
     @Autowired
     private Random random;

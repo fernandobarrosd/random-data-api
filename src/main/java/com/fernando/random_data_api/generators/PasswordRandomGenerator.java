@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import com.fernando.random_data_api.utils.RandomUtils;
 
 
-@Service("passwordRandomGenerator")
+@Service
 public class PasswordRandomGenerator implements RandomGenerator<Integer, String> {
     private static final Character[] characters = {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 

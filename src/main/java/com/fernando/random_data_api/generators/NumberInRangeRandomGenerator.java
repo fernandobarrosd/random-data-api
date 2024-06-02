@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.fernando.random_data_api.utils.RandomUtils;
 
-@Service("numberInRangeRandomGenerator")
+@Service
 public class NumberInRangeRandomGenerator implements RandomGenerator<NumberInRangeRandomGenerator.NumberRange, Integer>{
     @Autowired
     private Random random;
