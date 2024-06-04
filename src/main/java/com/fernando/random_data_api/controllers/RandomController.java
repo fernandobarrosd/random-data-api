@@ -3,6 +3,7 @@ package com.fernando.random_data_api.controllers;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,7 +45,7 @@ public class RandomController {
         return new RandomPasswordResponse(passwordSize, randomPassword);
     }
 
-    @GetMapping("/text")
+    @PostMapping("/text")
     public RandomTextResponse getRandomText(@RequestBody RandomTextRequestBody randomTextRequestBody) {
         List<String> texts = randomTextRequestBody.texts();
         if (texts == null) {
