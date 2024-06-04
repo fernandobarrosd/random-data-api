@@ -36,7 +36,7 @@ public class RandomController {
 
 
     @GetMapping("/password")
-    public RandomPasswordResponse getRandomPassword(@RequestParam("passwordSize") Integer passwordSize) {
+    public RandomPasswordResponse getRandomPassword(@RequestParam(defaultValue = "5") Integer passwordSize) {
         var randomPassword = passwordRandomGenerator.generateRandom(passwordSize);
         return new RandomPasswordResponse(passwordSize, randomPassword);
     }
