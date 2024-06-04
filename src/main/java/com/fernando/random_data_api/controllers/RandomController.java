@@ -64,7 +64,7 @@ public class RandomController {
         return new RandomCPFResponse(randomCPF, hasEspecialCharacters, randomCPF.length());
     }
 
-    @GetMapping("/number-in-range")
+    @GetMapping("/numberInRange")
     public RandomNumberInRangeResponse getRandomNumberInRage(
         @RequestParam("fromNumber") Integer fromNumber,
         @RequestParam("toNumber") Integer toNumber) {
