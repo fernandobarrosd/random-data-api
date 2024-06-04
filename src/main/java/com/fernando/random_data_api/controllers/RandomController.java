@@ -2,6 +2,7 @@ package com.fernando.random_data_api.controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,14 +39,14 @@ public class RandomController {
     @Autowired
     private NumberInRangeRandomGenerator numberRangeRandomGenerator;
 
-
-    @GetMapping("/password")
+    
+    @GetMapping(value = "/password", produces = MediaType.APPLICATION_JSON_VALUE)
     public RandomPasswordResponse getRandomPassword(@RequestParam Integer passwordSize) {
         var randomPassword = passwordRandomGenerator.generateRandom(passwordSize);
         return new RandomPasswordResponse(passwordSize, randomPassword);
     }
 
-    @PostMapping("/text")
+    @PostMapping(value = "/text", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public RandomTextResponse getRandomText(@RequestBody RandomTextRequestBody randomTextRequestBody) {
         List<String> texts = randomTextRequestBody.texts();
         if (texts == null) {
@@ -58,14 +59,14 @@ public class RandomController {
         return new RandomTextResponse(randomText, texts, texts.size(), randomText.length());
     }
 
-    @GetMapping("/cpf")
+    @GetMapping(value = "/cpf", produces = MediaType.APPLICATION_JSON_VALUE)
     public RandomCPFResponse getRandomCPF(
         @RequestParam(name = "hasEspecialCharacters", required = false, defaultValue = "false") Boolean hasEspecialCharacters) {
         String randomCPF = cpfRandomGenerator.generateRandom(hasEspecialCharacters);
         return new RandomCPFResponse(randomCPF, hasEspecialCharacters, randomCPF.length());
     }
 
-    @GetMapping("/numberInRange")
+    @GetMapping(value = "/numberInRange", produces = MediaType.APPLICATION_JSON_VALUE)
     public RandomNumberInRangeResponse getRandomNumberInRage(
         @RequestParam("fromNumber") Integer fromNumber,
         @RequestParam("toNumber") Integer toNumber) {
