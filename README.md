@@ -33,5 +33,5 @@ Clone: git clone https://github.com/fernandobarrosd/random-data-api.git
 
 ## API
 
-Link da API: https://random-data-api.onrender.com
-Documentação da API: https://random-data-api.onrender.com/docs/ui
+- Link da API: https://random-data-api.onrender.com
+- Documentação da API: https://random-data-api.onrender.com/docs/ui
