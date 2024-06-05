@@ -27,7 +27,7 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 <br>
 
 
-## Documentação da API
+## Documentação
 
 #### Retorna uma senha aleatória
 
