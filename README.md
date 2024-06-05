@@ -23,6 +23,112 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 - Java
 - Spring
 
+<br>
+<br>
+
+
+## Documentação da API
+
+#### Retorna uma senha aleatória
+
+```http
+  GET /random/password?passwordSize=number
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `passwordSize` | `number` | **Obrigatório** |
+
+##### Resposta (Sucesso)
+```json
+{
+  "password": "string",
+  "passwordSize": "number"
+}
+```
+
+##### Resposta (Erro)
+```json
+{
+  "message": "string",
+  "path": "string"
+  "statusCode": "number"
+}
+```
+
+
+<br>
+<br>
+
+
+#### Retorna um CPF aleatório
+
+```http
+  GET /random/cpf?hasEspecialCharacters=boolean
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `hasEspecialCharacters`      | `number` | **Opcional**|
+
+
+##### Resposta (Sucesso)
+```json
+{
+  "cpf": "string",
+  "cpfSize": "number",
+  "hasEspecialCharacters": "boolean"
+}
+```
+
+##### Resposta (Erro)
+```json
+{
+  "message": "string",
+  "path": "string"
+  "statusCode": "number"
+}
+```
+
+
+<br>
+<br>
+
+#### Retorna um texto aleatório a partir de uma lista de textos
+
+```http
+  POST /random/text
+```
+
+##### Corpo da requisição (Obrigatório)
+
+```json
+{
+  "texts": "string[]"
+}
+```
+
+##### Resposta (Sucesso)
+```json
+{
+  "text": "string",
+  "texts": "string[]",
+  "textSize": "number",
+  "textsSize": "number"
+}
+```
+
+##### Resposta (Erro)
+```json
+{
+  "message": "string",
+  "path": "string"
+  "statusCode": "number"
+}
+```
+
+
+
 ## Contribuição
 
 Para poder contribuir o projeto primeiro voce deverá seguir os seguintes passos:
