@@ -31,6 +31,7 @@ Para poder contribuir o projeto primeiro voce deverá seguir os seguintes passos
 
 Clone: git clone https://github.com/fernandobarrosd/random-data-api.git
 
+## API
 
 Link da API: https://random-data-api.onrender.com
 Documentação da API: https://random-data-api.onrender.com/docs/ui
