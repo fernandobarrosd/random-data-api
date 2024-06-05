@@ -23,5 +23,14 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 - Java
 - Spring
 
+## Contribuição
+
+Para poder contribuir o projeto primeiro voce deverá seguir os seguintes passos:
+- Ter o Java 21 instalado
+- Efetuar o clone ou o fork do projeto no Github
+
+Clone: git clone https://github.com/fernandobarrosd/random-data-api.git
 
 
+Link da API: https://random-data-api.onrender.com
+Documentação da API: https://random-data-api.onrender.com/docs/ui
