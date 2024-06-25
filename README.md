@@ -20,8 +20,10 @@ ficar tendo que criar do zero ou usar alternativas já existentes.
 
 
 ## Tecnologias utilizadas
-- Java
-- Spring
+- [Java](https://www.java.com/pt-BR/)
+- [Spring Framework](https://spring.io/projects/spring-framework)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Spring Web](https://docs.spring.io/spring-boot/reference/web/index.html)
 
 <br>
 <br>
